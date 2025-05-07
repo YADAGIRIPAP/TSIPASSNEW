@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tslmtsipassws.cgg.gov.in/" targetNamespace="http://tslmtsipassws.cgg.gov.in/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="updatePaymentResponseFromTSiPass" type="tns:updatePaymentResponseFromTSiPass" />
+  <xs:element name="updatePaymentResponseFromTSiPassResponse" type="tns:updatePaymentResponseFromTSiPassResponse" />
+  <xs:complexType name="updatePaymentResponseFromTSiPass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LGVID" type="xs:string" />
+      <xs:element minOccurs="0" name="legalApplID" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationType" type="xs:string" />
+      <xs:element minOccurs="0" name="merchantOrderNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="bankReferenceId" type="xs:string" />
+      <xs:element minOccurs="0" name="bankTransactionDate" type="xs:string" />
+      <xs:element minOccurs="0" name="bankName" type="xs:string" />
+      <xs:element minOccurs="0" name="amount" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updatePaymentResponseFromTSiPassResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

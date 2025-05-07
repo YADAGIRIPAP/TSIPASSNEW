@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://125.99.73.119:7077/Autodcr.TSPMON/tsipass.asmx?wsdl" docRef="http://125.99.73.119:7077/Autodcr.TSPMON/tsipass.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://125.99.73.119:7077/Autodcr.TSPMON/tsipass.asmx" xmlns:q1="https://dpms.hmda.gov.in/BPAMSClient/" binding="q1:tsipassSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://125.99.73.119:7077/Autodcr.TSPMON/tsipass.asmx" xmlns:q2="https://dpms.hmda.gov.in/BPAMSClient/" binding="q2:tsipassSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

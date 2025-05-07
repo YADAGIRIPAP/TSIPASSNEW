@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://test3.hyderabadwater.gov.in:92/CTL/ERP/EIF/SWC/MeeSeva/IL/ITSiPASSNewConnectionUC?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CTL.ERP.EIF.SWC.MeeSeva.Model.Domain" />
+  <xs:import schemaLocation="https://test3.hyderabadwater.gov.in:92/CTL/ERP/EIF/SWC/MeeSeva/IL/ITSiPASSNewConnectionUC?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CTL.ERP.EIF.SWC.BankTransfers.Model.Domain" />
+  <xs:element name="SubmitApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uIDNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="entrepreneurid" type="xs:int" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="houseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pinCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="officeTelephoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobileNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eMail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="saleDeedPlotAreaInSqMts" type="xs:decimal" />
+        <xs:element minOccurs="0" name="saleDeedPlotAreaInSqYards" type="xs:decimal" />
+        <xs:element minOccurs="0" name="totalPlinthArea" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitApplicationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetApplicationStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCollectionChargesReceipt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="quessionaireId" type="xs:int" />
+        <xs:element minOccurs="0" name="uIDNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entrepreneurid" type="xs:int" />
+        <xs:element minOccurs="0" name="totalAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="flag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bankName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCollectionChargesReceiptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CTL.ERP.EIF.SWC.MeeSeva.Model.Domain" minOccurs="0" name="PostCollectionChargesReceiptResult" nillable="true" type="q1:ResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TsIpassUploadDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TsIpassUploadDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TsIpassUploadDocumentsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TsIpassQueryAndUploadDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TsIpassQueryAndUploadDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TsIpassQueryAndUploadDocumentsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FeasibiltyTsIpassUploadDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FeasibiltyTsIpassUploadDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FeasibiltyTsIpassUploadDocumentsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FeasibiltyTsIpassQueryAndUploadDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FeasibiltyTsIpassQueryAndUploadDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FeasibiltyTsIpassQueryAndUploadDocumentsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitApplicationTSIPass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uIDNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationId" type="xs:int" />
+        <xs:element minOccurs="0" name="entrepreneurid" type="xs:int" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="houseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pinCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="officeTelephoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobileNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eMail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="saleDeedPlotAreaInSqMts" type="xs:decimal" />
+        <xs:element minOccurs="0" name="saleDeedPlotAreaInSqYards" type="xs:decimal" />
+        <xs:element minOccurs="0" name="totalPlinthArea" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitApplicationTSIPassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CTL.ERP.EIF.SWC.MeeSeva.Model.Domain" minOccurs="0" name="SubmitApplicationTSIPassResult" nillable="true" type="q2:TSIPASSSubmitApplication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostNeftCollectionForTSIPass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uniqueTransactionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senderName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="receiverAccount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostNeftCollectionForTSIPassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CTL.ERP.EIF.SWC.BankTransfers.Model.Domain" minOccurs="0" name="PostNeftCollectionForTSIPassResult" nillable="true" type="q3:ResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostRtgsCollectionForTSIPass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uniqueTransactionId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senderName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="receiverAccount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionAmount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostRtgsCollectionForTSIPassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CTL.ERP.EIF.SWC.BankTransfers.Model.Domain" minOccurs="0" name="PostRtgsCollectionForTSIPassResult" nillable="true" type="q4:ResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

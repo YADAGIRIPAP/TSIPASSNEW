@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="emptymasternew.master.cs"
+    Inherits="emptymasternew" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>TS-iPASS</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+   <%-- <link href="../../css/style.css" rel="stylesheet" type="text/css" />--%>
+    <link href="Resource/Styles/css/ComprehensiveMenu.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="skins/maroon/style.css" rel="stylesheet" media="all" />
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700italic,700,400italic,300italic,300'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        function UserDeleteConfirmation() {
+            return confirm("This is external link. Are you sure you want to continue?");
+        }
+    </script>
+
+    <link href="Masterfiles/css/StyleSheetMaster.css" rel="stylesheet" />
+
+    <link href="Resource/Styles/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <%--<link href="../../Resource/Styles/css/sb-admin.css" rel="stylesheet" type="text/css" />--%>
+    <%-- <link href="../../Resource/Styles/css/plugins/morris.css" rel="stylesheet" type="text/css" />--%>
+
+
+
+    <style type="text/css">
+        .style1 {
+            width: 99.8%;
+        }
+
+        .style4 {
+        }
+    </style>
+    <style>
+        .blink_text {
+            animation: 1s blinker linear infinite;
+            -webkit-animation: 1s blinker linear infinite;
+            -moz-animation: 1s blinker linear infinite;
+            color: white;
+            background-color: red;
+        }
+
+        .font-button {
+            background-color: #0090CB;
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25pt;
+            cursor: pointer;
+        }
+
+        @-moz-keyframes blinker {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 10.5;
+            }
+        }
+
+        @-webkit-keyframes blinker {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 10.5;
+            }
+        }
+
+        @keyframes blinker {
+            0% {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 10.5;
+            }
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    
+        <div class="wrapper">
+            <div class="inner-wrapper">
+                <header>
+                    
+
+                    <div>
+                        <div class="logo">
+                            <a href="TSHOME.ASPX">
+                                <img src="../../images/logo.jpg"></a>
+                        </div>
+                        
+                    </div>
+
+                    
+                    
+                </header>
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+        <a href="#" title="Go to Top" class="back-to-top"><span class="fa fa-angle-up"></span>
+        </a>
+    </form>
+
+    <a href="#" title="Go to Top" class="back-to-top"><span class="fa fa-angle-up"></span>
+    </a>
+
+
+  
+</body>
+</html>

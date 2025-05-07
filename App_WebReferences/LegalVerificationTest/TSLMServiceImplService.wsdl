@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tslmtsipassws.cgg.gov.in/" name="TSLMServiceImplService" targetNamespace="http://tslmtsipassws.cgg.gov.in/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://qa8.cgg.gov.in:443/tslmtsipassws/tslm?xsd=1" namespace="http://tslmtsipassws.cgg.gov.in/" />
+    </xsd:schema>
+  </types>
+  <message name="updatePaymentResponseFromTSiPass">
+    <part name="parameters" element="tns:updatePaymentResponseFromTSiPass" />
+  </message>
+  <message name="updatePaymentResponseFromTSiPassResponse">
+    <part name="parameters" element="tns:updatePaymentResponseFromTSiPassResponse" />
+  </message>
+  <portType name="TSLMService">
+    <operation name="updatePaymentResponseFromTSiPass">
+      <input message="tns:updatePaymentResponseFromTSiPass" />
+      <output message="tns:updatePaymentResponseFromTSiPassResponse" />
+    </operation>
+  </portType>
+  <binding name="TSLMServiceImplPortBinding" type="tns:TSLMService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="updatePaymentResponseFromTSiPass">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TSLMServiceImplService">
+    <port name="TSLMServiceImplPort" binding="tns:TSLMServiceImplPortBinding">
+      <soap:address location="https://qa8.cgg.gov.in:443/tslmtsipassws/tslm" />
+    </port>
+  </service>
+</definitions>

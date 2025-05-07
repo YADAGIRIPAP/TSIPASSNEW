@@ -1,0 +1,197 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FireCfeInfo.aspx.cs" Inherits="UI_TSiPASS_InformationTabPages_FireCfeInfo" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>:: TS-iPASS ::</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link id="default-css" href="../../../css/style.css" rel="stylesheet" type="text/css">
+    <link id="shortcodes-css" href="../../../css/shortcodes.css" rel="stylesheet" type="text/css">
+    <link href="../../../css/responsive.css" rel="stylesheet" type="text/css">
+    <link rel='stylesheet' id='layerslider-css' href="../../../css/layerslider.css" type='text/css' media='all' />
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link id="skin-css" href="../../../skins/maroon/style.css" rel="stylesheet" media="all" />
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Domine:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <style>
+        #primary.page-with-sidebar {
+            width: 1110px;
+            margin: 70px 30px 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inner-wrapper">
+            <header>
+                <div class="top-bar">
+                    <div class="container">
+                        <span id="clock" style="font-size: 12px;"></span>
+
+                        <div class="dt-sc-contact-number">
+                            <ul class="dt-sc-social-icons">
+                                <li><span class="fa fa-phone"></span>Call us: 040-23441636</li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100011131938859" target="_blank" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#" title="Google Plus"><span class="fa fa-google-plus"></span></a></li>
+                                <li><a href="#" title="Youtube"><span class="fa fa-youtube"></span></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="../../../images/logo.jpg"></a>
+                    </div>
+                    <div class="top-head">
+                        <div class="top-img">
+                            <img src="~/images/sri-k-chandrasekhar-rao.png" id="imgcm" runat="server">
+
+                            <h5 class="top-names">Sri. K.Chandrasekhar Rao</h5>
+                            <p class="top-names1">Hon'ble Chief Minister</p>
+                        </div>
+                        <div class="top-img mr0">
+                            <img src="~/images/sri-k-t-rama-rao.png" id="imgitm" runat="server">
+
+                            <h5 class="top-names">Sri. K. T. Rama Rao</h5>
+                            <p class="top-names1">Hon'ble Minister for Industries</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="menu-container">
+                    <div class="container">
+                        <nav id="main-menu">
+                            <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                            <ul id="menu-main-menu" class="menu">
+                                <li><a href="TSHome.aspx">Home</a></li>
+                                <li class="current_page_item"><a href="about.aspx">About Us</a></li>
+                                <li class="menu-item-simple-parent menu-item-depth-0"><a href="#x">Services</a>
+                                    <ul class="sub-menu">
+                                        <li><a target="_blank" href="../frmCFEcertificateProcess.aspx">TS-iPass Verification</a></li>
+                                        <%--<li><a target="_blank" href="UI/TSiPASS/AddNewInspectionUser.aspx">Inspection</a></li>--%>
+                                        <li><a target="_blank" href="../../../IncentiveRegistrationViewDocs.aspx">Incentive Check</a></li>
+                                        <li><a target="_blank" href="../../../IpassLogin.aspx">Raw Material Allocation</a></li>
+                                        <li><a target="_blank" href="../GuestGrievance.aspx">Grievance Registration</a></li>
+                                        <li><a target="_blank" href="../GuestInsturction.aspx">Bank Loan Application</a></li>
+                                        <li><a target="_blank" href="http://udyogaadhaar.gov.in/">Udyog Aadhaar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="../../../links.aspx">Related Departments</a></li>
+                                <li><a href="../../../Information.aspx">Information</a></li>
+                                <li><a href="../../../Downloads.aspx">Act & Rules</a></li>
+                                <li><a href="../../../UseCommentsOnAmmendments.aspx">Business Regulations</a></li>
+                                <li><a href="../../../Contacts.aspx">Contact us</a></li>
+                                <%-- <li><a href="#x">Related Departments</a></li>
+                                <li><a href="#x">Testimonials</a></li>
+                                <li><a href="#x">Latest News</a></li>
+                                <li><a href="#x">Contact Us</a></li>--%>
+
+                                <li><a href="../../../IpassLogin.aspx"><i class="fa fa-lock"></i>Login</a></li>
+                                <li><a href="../AddnewuserRegistration.aspx"><i class="fa fa-pencil"></i>Register</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </header>
+
+            <div id="main">
+                <div class="container">
+                    <section id="primary" class="page-with-sidebar with-right-sidebar">
+                        <h3>Provisional NoC from Fire Services Department</h3>
+                        <div class="dt-sc-hr-invisible-very-small"></div>
+                        <h4>Application for Provisional NoC: </h4>
+                        <div class="column">
+                            <ul class="dt-sc-fancy-list chocolate check-circle">
+                                <li><span>The Proponent shall submit Application on-line through the TS-iPASS portal (https://ipass.telangana.gov.in/).</span></li>
+                                <li><span>The applications are pre-scrutinized at by TS-iPASS and if any issues found, queries are raised to the applicant.</span></li>
+                                <li><span>Once the queries have been answered or the applications is in complete form, they are sent to the Director General, Fire Services Department</span></li>
+                                <li><span>Director General, Fire Services Department then assigns a committee to carry out the further processing of the application.</span></li>
+
+                            </ul>
+                       <%-- </div>
+                        <div class="dt-sc-hr-invisible-very-small"></div>--%>
+                        <h4>Processing of the Application: </h4>
+                      <%--  <div class="column">--%>
+                            <ul class="dt-sc-fancy-list chocolate check-circle">
+                                <li><span>The assigned committee then reviews the application and undertakes site inspection to verify the abutting road width for fire vehicle access and over-head High Tension electrical lines.</span></li>
+                                <li><span>Based on the inspection, the committee will send a recommendation to Regional Fire Officer for further verification of the application.</span></li>
+                                <li><span>If the application and inspection are in order then the provisional order is digitally signed and shared in the user’s login space.</span></li>
+                                <li><span>The user can view and download the digital copy of the provisional NOC in his login.</span></li>
+
+                            </ul>
+                       <%-- </div>
+                        <div class="dt-sc-hr-invisible-very-small"></div>--%>
+                        <h4>Checklist of Documents to be submitted with the Application</h4>
+                      <%--  <div class="column">--%>
+                            <ul class="dt-sc-fancy-list chocolate check-circle">
+                                <li><span>Site Plan/ as built plans of location, floor wise plan, terrace plan, section and elevation duly marking fire safety systems</span></li>
+                            </ul>
+                      <%--  </div>
+                        <div class="dt-sc-hr-invisible-very-small"></div>--%>
+                        <h4>Time Limits for receiving Provisional NoC after submission of Complete Application: </h4>
+                      <%--  <div class="column">--%>
+                            <ul class="dt-sc-fancy-list chocolate check-circle">
+                                <li><span>For Buildings under 15 mts height : 7 days</span></li>
+                                <li><span>For Buildings above 15 mts height: 14 days</span></li>
+                            </ul>
+                        </div>
+                        <div class="dt-sc-hr-invisible-very-small"></div>
+                    </section>
+                </div>
+
+            </div>
+
+            <footer>
+                <div class="copyright">
+                    <div class="container">
+                        <div class="col-1 white">
+                            <script type="text/javascript">document.write("&copy; " + new Date().getFullYear() + ". Copyright 2017 Government of Telangana. all rights reserved by Industries Chasing Cell..");</script>
+                        </div>
+                        <div class="col-2 white">
+                            <%--  Designed By <a href="http://www.bitranet.com/" title="Website Designed by BitraNet Pvt. Ltd.," target="_blank">BitraNet</a>--%>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <a href="#" title="Go to Top" class="back-to-top"><span class="fa fa-angle-up"></span></a>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery-easing-1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/jquery.smartresize.js"></script>
+    <script type="text/javascript" src="js/shortcodes.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script type="text/javascript" src="js/jquery-transit-modified.js"></script>
+    <script type="text/javascript" src="js/layerslider.kreaturamedia.jquery.js"></script>
+    <script type='text/javascript' src="js/greensock.js"></script>
+    <script type='text/javascript' src="js/layerslider.transitions.js"></script>
+
+    <script type="text/javascript">var lsjQuery = jQuery;</script>
+    <script type="text/javascript"> lsjQuery(document).ready(function () { if (typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_2', 'jquery'); } else { lsjQuery("#layerslider_2").layerSlider({ responsiveUnder: 1240, layersContainer: 1170, skinsPath: 'js/layerslider/skins/' }) } }); </script>
+
+</body>
+
+
+</html>
