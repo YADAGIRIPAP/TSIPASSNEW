@@ -6,7 +6,7 @@
 
     <meta http-equiv="content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>:: TS-iPASS ::</title>
+    <title>:: TS-iPASS :: Aboutus Page</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <link id="default-css" href="css/style.css" rel="stylesheet" type="text/css">
