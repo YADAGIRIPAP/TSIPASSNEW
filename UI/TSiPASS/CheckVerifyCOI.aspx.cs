@@ -192,4 +192,23 @@ public partial class UI_TSiPASS_CheckVerifyCOI : System.Web.UI.Page
         }
     }
 
+
+    //protected void lbtnBack_Click(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        if (Request.UrlReferrer != null)
+    //        {
+    //            Response.Redirect(Request.UrlReferrer.ToString(), false);
+    //        }
+    //        else
+    //        {
+    //            Response.Redirect("Default.aspx", false);
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        throw ex ;
+    //    }
+    //}
 }

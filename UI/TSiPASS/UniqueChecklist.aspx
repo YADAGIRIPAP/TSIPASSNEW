@@ -341,8 +341,18 @@
         </ol>
     </div>
     <div align="left">
+        <div class="card-header d-flex justify-content-between">
+            <h4 class="card-title mt-1"><b></b></h4>
+            <div class="col-md-1">
+                <asp:LinkButton ID="lbtnBack" runat="server" Text="Back" ForeColor="White" CssClass="btn btn-sm" OnClick="lbtnBack_Click" Style="background-color: green; color: black; font-weight: bold;">
+    <i class="fi fi-br-angle-double-small-left" style="margin-left: 5px; margin-right: 5px;"></i>Back
+                </asp:LinkButton>
+            </div>
+        </div>
         <div class="row" align="left">
             <div class="col-lg-12">
+
+
                 <%--<div class="panel panel-primary">
                             <div class="panel-heading" align="center">
                                 <h3 class="panel-title">Departments</h3>
@@ -503,7 +513,7 @@
                                                         </asp:TemplateField>
                                                         <asp:TemplateField HeaderText="View">
                                                             <ItemTemplate>
-                                                                <asp:HyperLink ID="hplAttachment" Text="view" runat="server"></asp:HyperLink>
+                                                                <asp:HyperLink ID="hplAttachment" Text="view" runat="server" Target="_blank"></asp:HyperLink>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                     </Columns>

@@ -115,6 +115,15 @@
         <ContentTemplate>
             <div align="left">
                 <div class="row" align="left">
+                  <%--  <div class="card-header d-flex justify-content-between">
+                        <h4 class="card-title mt-1"><b></b></h4>
+                        <div class="col-md-1">
+                            <asp:LinkButton
+                                ID="lbtnBack" runat="server" Text="Back" CssClass="btn btn-sm" OnClick="lbtnBack_Click"
+                                Style="background-color: green; color: black; font-weight: bold;">
+    <i class="fi fi-br-angle-double-small-left" style="margin-left: 5px; margin-right: 5px;"></i>Back</asp:LinkButton>
+                        </div>
+                    </div>--%>
                     <div class="col-lg-12">
                         <table style="width: 100%">
                             <tr>
@@ -160,14 +169,14 @@
 
                                                                     <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="RANDOM NO">
                                                                         <ItemTemplate>
-                                                                           <%-- <asp:LinkButton runat="server" ID="lnkRandom" Text='<%#Eval("RANDOMNO") %>' />--%>
-                                                                             <asp:Label ID="lnkRandom" runat="server" Text='<%#Eval("RANDOMNO") %>'></asp:Label>
+                                                                            <%-- <asp:LinkButton runat="server" ID="lnkRandom" Text='<%#Eval("RANDOMNO") %>' />--%>
+                                                                            <asp:Label ID="lnkRandom" runat="server" Text='<%#Eval("RANDOMNO") %>'></asp:Label>
                                                                         </ItemTemplate>
                                                                         <HeaderStyle HorizontalAlign="Left" Width="60px" />
                                                                     </asp:TemplateField>
                                                                     <asp:TemplateField HeaderStyle-HorizontalAlign="Left" HeaderText="No.of Claims">
                                                                         <ItemTemplate>
-                                                                          <%--  <asp:LinkButton runat="server" ID="lnkCount" Text='<%#Eval("UNITSCOUNT") %>' />--%>
+                                                                            <%--  <asp:LinkButton runat="server" ID="lnkCount" Text='<%#Eval("UNITSCOUNT") %>' />--%>
                                                                             <asp:Label ID="lnkCount" runat="server" Text='<%#Eval("UNITSCOUNT") %>'></asp:Label>
                                                                         </ItemTemplate>
                                                                         <HeaderStyle HorizontalAlign="Left" Width="80px" />
@@ -208,7 +217,7 @@
                                                                             <asp:Button ID="btnProcess" CssClass="btn btn-primary" Style="" runat="server" Text="Process" OnClick="btnProcess_Click" />
                                                                         </ItemTemplate>
                                                                         <HeaderStyle HorizontalAlign="Left" Width="60px" />
-                                                                    </asp:TemplateField>                                                               
+                                                                    </asp:TemplateField>
 
                                                                 </Columns>
                                                                 <PagerStyle BackColor="#013161" ForeColor="White" HorizontalAlign="Center" />
@@ -227,7 +236,7 @@
                                     <%--   </div>--%>
                                 </td>
                             </tr>
-                         
+
 
                             <tr>
                                 <td align="center" style="padding: 5px; margin: 5px; text-align: center;">&nbsp;&nbsp;&nbsp;

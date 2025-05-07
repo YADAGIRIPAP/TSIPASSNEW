@@ -319,4 +319,23 @@ public partial class UI_TSiPASS_UniqueChecklist : System.Web.UI.Page
 
 
     }
+
+    protected void lbtnBack_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string ROLECODE = Convert.ToString(Session["Role_Code"]);
+            string Type = Convert.ToString(Request.QueryString[2]);
+            string STATUS = Convert.ToString(Request.QueryString["STATUS"]);
+            string CREATEDBY = Convert.ToString(Session["uid"]);
+            string redirectUrl = "CheckVerifyCOI.aspx?Type=" + Type + "&STATUS=" + STATUS + "&CREATEDBY=" + CREATEDBY + "&ROLECODE=" + ROLECODE;
+            Response.Redirect(redirectUrl);
+            // Response.Redirect(Request.UrlReferrer.ToString());
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
 }
