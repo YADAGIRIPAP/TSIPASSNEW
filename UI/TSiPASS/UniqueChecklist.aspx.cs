@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -12,14 +13,14 @@ using System.Web.UI.WebControls;
 public partial class UI_TSiPASS_UniqueChecklist : System.Web.UI.Page
 {
     DB.DB con = new DB.DB();
+    General Gen = new General();
     string Random, Stageid, Dipc, STATUS, ROLECODE;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            ROLECODE = Convert.ToString(Request.QueryString["ROLECODE"]);
 
-            if (ROLECODE == "COI-ADDL")
+            if (Convert.ToString(Request.QueryString["ROLECODE"]) == "COI-ADDL")
             {
                 Cheque.Visible = true;
             }
@@ -123,7 +124,7 @@ public partial class UI_TSiPASS_UniqueChecklist : System.Web.UI.Page
                 CoiDetailsCheck.Dipc = Convert.ToString(Request.QueryString[2]);
                 CoiDetailsCheck.ActionId = ddlForward.SelectedValue;
                 CoiDetailsCheck.ROLECODE = Convert.ToString(Request.QueryString["ROLECODE"]);
-                if (ROLECODE == "COI-ADDL")
+                if (Convert.ToString(Request.QueryString["ROLECODE"]) == "COI-ADDL")
                 {
                     CoiDetailsCheck.ProposedSVCDate = TXTCHEQUEGENERATEPRINTDATE.Text;
                 }
@@ -296,4 +297,26 @@ public partial class UI_TSiPASS_UniqueChecklist : System.Web.UI.Page
 
 
 
+
+    protected void GVUnique_RowDataBound1(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            HyperLink h3 = (HyperLink)e.Row.FindControl("hplAttachment");
+
+
+            string filepathnew = Convert.ToString(DataBinder.Eval(e.Row.DataItem, "ADRTGS"));
+            if (filepathnew != "")
+            {
+                string encpassword = Gen.Encrypt(filepathnew, "SYSTIME");
+                h3.NavigateUrl = "CS.aspx?filepathnew=" + encpassword;
+            }
+            else
+            {
+                h3.Visible = false;
+            }
+        }
+
+
+    }
 }

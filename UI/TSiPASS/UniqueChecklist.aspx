@@ -369,7 +369,7 @@
                                                         <asp:TextBox runat="server" ID="TXTCHEQUEGENERATEPRINTDATE" placeholder="DD/MM/YYYY" class="form-control txtbox" Height="28px"
                                                             MaxLength="80" TabIndex="1" Width="150px"></asp:TextBox>
                                                     </td>
-                                                   <%-- <td style="vertical-align: middle; font-weight: bold; width: 600px" align="right">Release Proceeding No :
+                                                    <%-- <td style="vertical-align: middle; font-weight: bold; width: 600px" align="right">Release Proceeding No :
                                                     </td>
                                                     <td style="padding: 5px; margin: 5px; width: 500px; text-align: left; font-weight: bold">
                                                         <asp:Label runat="server" ID="lblRlsProceedNo" Height="28px" MaxLength="80" TabIndex="1"></asp:Label>
@@ -383,7 +383,7 @@
                                             <div id="Div1" style="width: 100%" runat="server">
                                                 <asp:GridView ID="GVUnique" runat="server" AutoGenerateColumns="false" CellPadding="4"
                                                     CssClass="GRD" ForeColor="#333333" Height="62px" PageSize="15" ShowFooter="false"
-                                                    Width="100%" CellSpacing="4">
+                                                    Width="100%" CellSpacing="4" OnRowDataBound="GVUnique_RowDataBound1">
                                                     <FooterStyle BackColor="#be8c2f" Font-Bold="True" ForeColor="White" />
                                                     <RowStyle BackColor="#EBF2FE" CssClass="GRDITEM" HorizontalAlign="Left" VerticalAlign="Middle" />
                                                     <Columns>
@@ -496,9 +496,14 @@
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
 
-                                                        <asp:TemplateField HeaderText="Letter from Banker">
+                                                        <asp:TemplateField HeaderText="Letter from Banker" Visible="false">
                                                             <ItemTemplate>
                                                                 <asp:HyperLink ID="hprlink" runat="server" Text="Document" NavigateUrl='<%#Eval("Document") %>' Target="_blank"></asp:HyperLink>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="View">
+                                                            <ItemTemplate>
+                                                                <asp:HyperLink ID="hplAttachment" Text="view" runat="server"></asp:HyperLink>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
                                                     </Columns>
@@ -571,7 +576,7 @@
 
                 <asp:Label ID="lblAction" runat="server" Visible="false"></asp:Label>
 
-                
+
 
             </div>
         </div>

@@ -486,44 +486,52 @@ public partial class UI_TSiPASS_CheckListPrint : System.Web.UI.Page
             string Error = ""; string message = "";
             if (FileUpload.HasFile)
             {
-                Error = validations(FileUpload);
                 if (string.IsNullOrEmpty(Error))
                 {
-                    GridViewRow gvrow = (GridViewRow)((Button)sender).NamingContainer; 
-                    string enterperIncentiveID = ((Label)gvrow.FindControl("lblEnterperIncentiveID")).Text;
-                    string mstIncentiveId = Request.QueryString["MstIncentiveId"];
-
-                    string baseDir = ConfigurationManager.AppSettings["TSiPASSSkils"];
-                    string serverPath = Path.Combine(baseDir, enterperIncentiveID, mstIncentiveId, "File Upload");
-
-                    if (!Directory.Exists(serverPath))
-                        Directory.CreateDirectory(serverPath);
-
-                    string[] existingFiles = Directory.GetFiles(serverPath);
-                    foreach (string file in existingFiles)
-                        File.Delete(file);
-
-                    string fullFilePath = Path.Combine(serverPath, FileUpload.PostedFile.FileName);
-                    FileUpload.SaveAs(fullFilePath);
-
-                    Attachments objAttachment = new Attachments
+                    foreach (GridViewRow row in grdDetails.Rows)
                     {
-                        SLC_DIPC = !string.IsNullOrEmpty(Request.QueryString["DIPC"]) ? Request.QueryString["DIPC"] : null,
-                        FILEPATH = fullFilePath,
-                        FILENAME = FileUpload.PostedFile.FileName,
-                        INCENTIVEID = enterperIncentiveID,
-                        MasterIncentiveId = mstIncentiveId
-                    };
+                        CheckBox chkRow = row.FindControl("chkRow") as CheckBox;
+                        if (chkRow != null && chkRow.Checked)
+                        {
 
-                    string result = InsertAttachments(objAttachment);
-                    if (!string.IsNullOrEmpty(result))
-                    {
-                        lblFileName1.Text = FileUpload.PostedFile.FileName;
-                        lblFileName1.NavigateUrl = "~/User/Dashboard/ServePdfFile.ashx?filePath=" + fullFilePath;
-                        lblFileName1.Target = "_blank";
+                            //  Label lblId = (Label)row.FindControl("lblIncentiveID");
+                            Label lblMsatIncentiveID = row.FindControl("lblEnterperIncentiveID") as Label;
 
-                        message = "alert('Aadhar Document Uploaded successfully')";
-                        ScriptManager.RegisterClientScriptBlock((sender as Control), this.GetType(), "alert", message, true);
+                            string InvestmentId = Request.QueryString["MstIncentiveId"];
+
+                            string baseDir = ConfigurationManager.AppSettings["CheckListPath"];
+                            string serverPath = Path.Combine(baseDir, lblMsatIncentiveID.Text, InvestmentId, "File Upload");
+
+                            if (!Directory.Exists(serverPath))
+                                Directory.CreateDirectory(serverPath);
+
+                            string[] existingFiles = Directory.GetFiles(serverPath);
+                            foreach (string file in existingFiles)
+                                File.Delete(file);
+
+                            string fullFilePath = Path.Combine(serverPath, FileUpload.PostedFile.FileName);
+                            FileUpload.SaveAs(fullFilePath);
+
+                            Attachments objAttachment = new Attachments
+                            {
+                                SLC_DIPC = !string.IsNullOrEmpty(Request.QueryString["DIPC"]) ? Request.QueryString["DIPC"] : null,
+                                FILEPATH = fullFilePath,
+                                FILENAME = FileUpload.PostedFile.FileName,
+                                INCENTIVEID = lblMsatIncentiveID.Text,
+                                MasterIncentiveId = InvestmentId
+                            };
+
+                            string result = InsertAttachments(objAttachment);
+                            if (!string.IsNullOrEmpty(result))
+                            {
+                                lblFileName1.Text = FileUpload.PostedFile.FileName;
+                                lblFileName1.NavigateUrl = "~/User/Dashboard/ServePdfFile.ashx?filePath=" + fullFilePath;
+                                lblFileName1.Target = "_blank";
+
+                                message = "alert('Document Uploaded successfully')";
+                                ScriptManager.RegisterClientScriptBlock((sender as Control), this.GetType(), "alert", message, true);
+                            }
+                        }
                     }
                 }
                 else
@@ -566,11 +574,11 @@ public partial class UI_TSiPASS_CheckListPrint : System.Web.UI.Page
             if (objAttachment.SLC_DIPC != null && objAttachment.SLC_DIPC != "")
             {
                 com.Parameters.AddWithValue("@SLC_DIPC", objAttachment.SLC_DIPC);
-            }           
-            com.Parameters.AddWithValue("@FILEPATH", objAttachment.FILEPATH);
-            com.Parameters.AddWithValue("@FILENAME", objAttachment.FILENAME);
-            com.Parameters.AddWithValue("@INCENTIVEID", objAttachment.INCENTIVEID);
-            com.Parameters.AddWithValue("@MasterIncentiveId", Convert.ToInt32(objAttachment.MasterIncentiveId));
+            }
+            com.Parameters.AddWithValue("@ADRTGS_FILEPATH", objAttachment.FILEPATH);
+            com.Parameters.AddWithValue("@ADRTGS_FILENAME", objAttachment.FILENAME);
+            com.Parameters.AddWithValue("@INCENTIVEID", objAttachment.MasterIncentiveId );
+            com.Parameters.AddWithValue("@MasterIncentiveId", Convert.ToInt32(objAttachment.INCENTIVEID));
 
 
 
@@ -594,81 +602,13 @@ public partial class UI_TSiPASS_CheckListPrint : System.Web.UI.Page
         }
         return Result;
     }
-
-    public string validations(FileUpload Attachment)
-    {
-        try
-        {
-            string filesize = Convert.ToString(ConfigurationManager.AppSettings["FileSize"].ToString());
-            int slno = 1; string Error = "";
-            //if (Attachment.PostedFile.ContentType != "application/pdf"
-            //     || !ValidateFileName(Attachment.PostedFile.FileName) || !ValidateFileExtension(Attachment))
-            //{
-
-            if (Attachment.PostedFile.ContentType != "application/pdf")
-            {
-                Error = Error + slno + ". Please Upload PDF Documents only \\n";
-                slno = slno + 1;
-            }
-            if (Attachment.PostedFile.ContentLength >= Convert.ToInt32(filesize))
-            {
-                Error = Error + slno + ". Please Upload file size less than " + Convert.ToInt32(filesize) / 1000000 + "MB \\n";
-                slno = slno + 1;
-            }
-            if (!ValidateFileName(Attachment.PostedFile.FileName))
-            {
-                Error = Error + slno + ". Document name should not contain symbols like  <, >, %, $, @, &,=, / \\n";
-                slno = slno + 1;
-            }
-            else if (!ValidateFileExtension(Attachment))
-            {
-                Error = Error + slno + ". Document should not contain double extension (double . ) \\n";
-                slno = slno + 1;
-            }
-            //  }
-            return Error;
-        }
-        catch (Exception ex)
-        { throw ex; }
-    }
-    public static bool ValidateFileName(string fileName)
-    {
-        try
-        {
-            string pattern = @"[<>%$@&=!:*?|]";
-
-            if (Regex.IsMatch(fileName, pattern))
-            {
-                return false;
-            }
-            return true;
-        }
-        catch (Exception ex)
-        { throw ex; }
-    }
-    public static bool ValidateFileExtension(FileUpload Attachment)
-    {
-        try
-        {
-            string Attachmentname = Attachment.PostedFile.FileName;
-            string[] fileType = Attachmentname.Split('.');
-            int i = fileType.Length;
-
-            if (i == 2 && fileType[i - 1].ToUpper().Trim() == "PDF")
-                return true;
-            else
-                return false;
-        }
-        catch (Exception ex)
-        { throw ex; }
-    }
     public class Attachments
     {
         public string SLC_DIPC { get; set; }
         public string FILEPATH { get; set; }
         public string FILENAME { get; set; }
         public string INCENTIVEID { get; set; }
-        public string MasterIncentiveId { get; set; }      
+        public string MasterIncentiveId { get; set; }
 
     }
 
